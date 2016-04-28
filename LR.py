@@ -7,8 +7,8 @@ from math import exp, log, sqrt
 
 # parameters #################################################################
 
-train = 'tt.csv'  # path to training file
-test = 'te.csv'  # path to testing file
+train = 'train.csv'  # path to training file
+test = 'test.csv'  # path to testing file
 model = 'LR.model'
 
 D = 2 ** 20   # demension of weights use for learning
