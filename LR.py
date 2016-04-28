@@ -7,8 +7,8 @@ from math import exp, log, sqrt
 
 # parameters #################################################################
 
-train = 'train.csv'  # path to training file
-test = 'test.csv'  # path to testing file
+train = 'tt.csv'  # path to training file
+test = 'te.csv'  # path to testing file
 model = 'LR.model'
 
 D = 2 ** 20   # demension of weights use for learning
@@ -130,9 +130,8 @@ def predict(test_file):
             p = get_p(x, w)
             cost += logloss(p, y)
             submission.write('%s,%f\n' % (Id, p))
-        if(t % 10000 == 0):
-            print('%s\tencountered: %d\tcurrent logloss: %f' % (datetime.now(), t, cost/t))
-    print('%s\tencountered: %d\tcurrent logloss: %f' % (datetime.now(), t, cost/t))
+            if t % 100 == 0 and t > 1:
+                print('%s\tencountered: %d\tcurrent logloss: %f' % (datetime.now(), t, cost/t))
 
 #def load_model(model_file):
 #    with open(model_file) as model:
